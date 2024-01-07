@@ -6,7 +6,7 @@ from pyrogram.types import InlineKeyboardMarkup
 
 import config
 from SYSTUM import Carbon, YouTube, app
-from SYSTUM.core.call import Anony
+from SYSTUM.core.call import KING
 from SYSTUM.misc import db
 from SYSTUM.utils.database import add_active_video_chat, is_active_chat
 from SYSTUM.utils.exceptions import AssistantErr
