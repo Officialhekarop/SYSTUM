@@ -4,7 +4,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 
 from SYSTUM import app
-from SYSTUM.core.call import Anony
+from SYSTUM.core.call import KING
 from SYSTUM.utils import bot_sys_stats
 from SYSTUM.utils.decorators.language import language
 from SYSTUM.utils.inline import supp_markup
