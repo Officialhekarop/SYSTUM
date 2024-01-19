@@ -1,8 +1,6 @@
-from strings import get_string
-
-from SYSTUM import app
 from SYSTUM.misc import SUDOERS
 from SYSTUM.utils.database import get_lang, is_maintenance
+from SYSTUM import get_string
 
 
 def language(mystic):
