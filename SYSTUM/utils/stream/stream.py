@@ -11,7 +11,7 @@ from SYSTUM.misc import db
 from SYSTUM.utils.database import add_active_video_chat, is_active_chat
 from SYSTUM.utils.exceptions import AssistantErr
 from SYSTUM.utils.inline import aq_markup, close_markup, stream_markup
-from SYSTUM.utils.pastebin import AnonyBin
+from SYSTUM.utils.pastebin import KINGBin
 from SYSTUM.utils.stream.queue import put_queue, put_queue_index
 from SYSTUM.utils.thumbnails import get_thumb
 
