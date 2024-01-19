@@ -1,15 +1,35 @@
 from datetime import datetime
-
 from pyrogram import filters
-from pyrogram.types import Message
-
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from SYSTUM import app
 from SYSTUM.core.call import KING
 from SYSTUM.utils import bot_sys_stats
 from SYSTUM.utils.decorators.language import language
 from SYSTUM.utils.inline import supp_markup
-from config import BANNED_USERS, PING_IMG_URL
+from config import BANNED_USERS
+import aiohttp
+import asyncio
+from io import BytesIO
+from PIL import Image, ImageEnhance  # Add these imports
 
+async def make_carbon(code):
+    url = "https://carbonara.solopov.dev/api/cook"
+    async with aiohttp.ClientSession() as session:
+        async with session.post(url, json={"code": code}) as resp:
+            image = BytesIO(await resp.read())
+
+    # Open the image using PIL
+    carbon_image = Image.open(image)
+
+    # Increase brightness
+    enhancer = ImageEnhance.Brightness(carbon_image)
+    bright_image = enhancer.enhance(1.7)  # Adjust the enhancement factor as needed
+
+    # Save the modified image to BytesIO object with increased quality
+    output_image = BytesIO()
+    bright_image.save(output_image, format='PNG', quality=95)  # Adjust quality as needed
+    output_image.name = "carbon.png"
+    return output_image
 
 @app.on_message(filters.command("ping", prefixes=["/", "!", "%", ",", "", ".", "@", "#"]) & ~BANNED_USERS)
 @language
