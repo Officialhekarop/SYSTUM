@@ -110,7 +110,10 @@ async def get_thumb(videoid):
     arial = ImageFont.truetype("SYSTUM/assets/font2.ttf", 30)
     font = ImageFont.truetype("SYSTUM/assets/font.ttf", 30)
     title_font = ImageFont.truetype("SYSTUM/assets/font3.ttf", 45)
-
+    
+    draw.text(
+            (5, 5), f"{'BRANDED KING'}", fill="white", font=name_font
+    )
 
     circle_thumbnail = crop_center_circle(youtube, 400, 20)
     circle_thumbnail = circle_thumbnail.resize((400, 400))
