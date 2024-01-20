@@ -31,7 +31,7 @@ def private_panel(_):
         ],
         [
             InlineKeyboardButton(text=_["S_B_6"], url=config.SUPPORT_CHANNEL),
-            InlineKeyboardButton(text=_["S_B_7"], url=f"https://github.com/WCGKING/SYSTUM"
+            InlineKeyboardButton(text=_["S_B_7"], url=config.REPO_LINKE),
         ],
     ]
     return buttons
